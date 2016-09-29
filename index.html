@@ -6,13 +6,18 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+       
+       
+
         
 
         
     
-        console.log(window.geemails);
-        console.log(window.geemails[5].body);
+        
       }
+
+       setInterval(getNewMessage(), 3000); 
+
       function rowclick(object) {
       	console.log(geemails[object]);
       }
@@ -23,108 +28,111 @@
 
       }
 
-l
+
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
 			<div class='header'>
-				<h1>GEEMAIL(10)</h1>
+				<h1>GEEMAIL</h1>
+				<h3>Inbox</h3>
 			</div>
 			<div class="content">
-				<table style="width:100%">
+				<table style="width:100%" id="generatedData">
 					<tr align="left">
 						<th>SENDER</th>
 						<tH>SUBJECT</tH>
 						<th>DATE</th>
-						<th></th>
+						
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(0)" class="row">
 					
 						<td><script>document.write(window.geemails[0].sender);</script></td>
 						<td><script>document.write(window.geemails[0].subject);</script></td>
 						<td><script>document.write(window.geemails[0].date);</script></td>
-						<td><button onclick="openMessage(0)">open message</button></td>						
+											
 					
 					</tr>
 					
-					<tr class="row">
+					<tr onclick="openMessage(1)" class="row">
 					
 						<td><script>document.write(window.geemails[1].sender);</script></td>
 						<td><script>document.write(window.geemails[1].subject);</script></td>
 						<td><script>document.write(window.geemails[1].date);</script></td>
-						<td><button onclick="openMessage(1)">open message</button></td>	
+						
 					
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(2)"class="row">
 					
 						<td><script>document.write(window.geemails[2].sender);</script></td>
 						<td><script>document.write(window.geemails[2].subject);</script></td>
 						<td><script>document.write(window.geemails[2].date);</script></td>
-						<td><button onclick="openMessage(2)">open message</button></td>	
+						
 					
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(3)"class="row">
 					
 						<td><script>document.write(window.geemails[3].sender);</script></td>
 						<td><script>document.write(window.geemails[3].subject);</script></td>
 						<td><script>document.write(window.geemails[3].date);</script></td>
-						<td><button onclick="openMessage(3)">open message</button></td>
+						
 					
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(4)"class="row">
 					
 						<td><script>document.write(window.geemails[4].sender);</script></td>
 						<td><script>document.write(window.geemails[4].subject);</script></td>
 						<td><script>document.write(window.geemails[4].date);</script></td>
-						<td><button onclick="openMessage(4)">open message</button></td>	
+						
 					
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(5)"class="row">
 					
 						<td><script>document.write(window.geemails[5].sender);</script></td>
 						<td><script>document.write(window.geemails[5].subject);</script></td>
 						<td><script>document.write(window.geemails[5].date);</script></td>
-						<td><button onclick="openMessage(5)">open message</button></td>	
+							
 					
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(6)"class="row">
 					
 						<td><script>document.write(window.geemails[6].sender);</script></td>
 						<td><script>document.write(window.geemails[6].subject);</script></td>
 						<td><script>document.write(window.geemails[6].date);</script></td>
-						<td><button onclick="openMessage(6)">open message</button></td>	
+						
 					
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(7)" class="row">
 					
 						<td><script>document.write(window.geemails[7].sender);</script></td>
 						<td><script>document.write(window.geemails[7].subject);</script></td>
 						<td><script>document.write(window.geemails[7].date);</script></td>
-						<td><button onclick="openMessage(7)">open message</button></td>	
+						
 					
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(8)"class="row">
 					
 						<td><script>document.write(window.geemails[8].sender);</script></td>
 						<td><script>document.write(window.geemails[8].subject);</script></td>
 						<td><script>document.write(window.geemails[8].date);</script></td>
-						<td><button onclick="openMessage(8)">open message</button></td>	
+							
 					
 					</tr>
-					<tr class="row">
+					<tr onclick="openMessage(9)"class="row">
 					
 						<td><script>document.write(window.geemails[9].sender);</script></td>
 						<td><script>document.write(window.geemails[9].subject);</script></td>
 						<td><script>document.write(window.geemails[9].date);</script></td>
-						<td><button onclick="openMessage(9)">open message</button></td>	
+						
 					
 					</tr>
 
 				</table>
 
 				<div class="currentMsg" >
+					<p id="messageBody"><h5>Current Message:</h5></p>
 					<p id="currentmsg">
+
 	
 					</p>
 				</div>
