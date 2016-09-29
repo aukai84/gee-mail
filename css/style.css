@@ -1,4 +1,12 @@
-tr.row1 {
-	text-al:center;
-	}
+.row {
+	color:white;
+	height:50px;
+	background-color:#aaa;
 
+
+}
+
+.row:hover {
+	color:#aaa;
+	background-color:white;
+}
