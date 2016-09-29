@@ -2,6 +2,7 @@
 	color:white;
 	height:50px;
 	background-color:#aaa;
+	
 
 
 }
@@ -31,3 +32,12 @@
 	border:.5px solid black;
 	width:100%;
 }
+
+.mainlogo {
+	height:10%;
+	width:auto;
+}
+
+.topheader {
+	text-align:center;
+	font-family:Arial-black;
