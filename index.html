@@ -7,16 +7,22 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
        
-       
-
+      myFunction();
         
 
         
     
         
       }
+      var myVar;
 
-       setInterval(getNewMessage(), 3000); 
+	function myFunction() {
+    myVar = setInterval(alertFunc, 3000);
+	}
+
+     function alertFunc() {
+     	getNewMessage();
+     }
 
       function rowclick(object) {
       	console.log(geemails[object]);
@@ -28,6 +34,12 @@
 
       }
 
+      function rows() {
+      	var html ="Hello World";
+      	console.log(html);
+
+      }
+
 
     </script>
 	</head>
@@ -35,7 +47,7 @@
 		<div class="container" id="main">
 			<div class='header'>
 				<img  class="mainlogo" src="https://www.pactsafe.com/hubfs/gmail-image.jpg" />
-				<h3 id="inbox">Inbox</h3>
+				<h3 id="inbox"><script type="text/javascript">document.write("Inbox(" + window.geemails.length + ")");</script></h3>
 			</div>
 			<div class="content">
 				<table style="width:100%" id="generatedData">
@@ -45,14 +57,7 @@
 						<th>DATE</th>
 						
 					</tr>
-					<tr onclick="openMessage(0)" class="row">
-					
-						<td><script>document.write(window.geemails[0].sender);</script></td>
-						<td><script>document.write(window.geemails[0].subject);</script></td>
-						<td><script>document.write(window.geemails[0].date);</script></td>
-											
-					
-					</tr>
+					<tr><script>rows();</script></tr> 
 					
 					<tr onclick="openMessage(1)" class="row">
 					
