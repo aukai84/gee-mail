@@ -81,22 +81,11 @@
 
 
 
-        
-         
-        	
+        function addMessage() {
 
-        	
-      
+      	
 
-        
-    	
-        
-      };
-
-     
-      function addMessage() {
-
-      	var newestMessage = window.getNewMessage();
+      	var newestMessage = getNewMessage;
 
       	var newemailRow = document.createElement('tr');
         	newemailRow.className = 'row';
@@ -126,6 +115,9 @@
         	newbodyContainer.innerHTML = newestMessage.body;
         	newbodyRow.appendChild(newbodyContainer);
 
+        	
+        	tableBody.appendChild(newemailRow);
+        	tableBody.appendChild(newbodyRow);
 
 
 
@@ -133,12 +125,25 @@
 
       }
 
+      
       addMessage();
+      
 
-      console.log(addMessage());
+      setInterval(addMessage,3000);
 
-      setInterval(addMessage(),1000);
+         
+        	
 
+        	
+      
+
+        
+    	
+        
+      };
+
+     
+      
 
      
 	
