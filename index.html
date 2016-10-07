@@ -34,7 +34,8 @@
         	emailRow.appendChild(senderContainer);
         	emailRow.appendChild(subjectContainer);
         	emailRow.appendChild(dateContainer);
-
+        	//add event listener click to show body
+        	emailRow.addEventListener('click', toggleBody);
         	//creating body row with body data appended to body row
         	var bodyRow = document.createElement('tr');
         	bodyRow.className = 'bodyRow';
@@ -42,7 +43,7 @@
         	bodyContainer.colSpan = "3";
         	bodyContainer.innerHTML = window.geemails[i].body;
         	bodyRow.appendChild(bodyContainer);
-
+        	bodyRow.style.display = 'none';
 
 
 
@@ -52,20 +53,21 @@
 
 
 
-
-
-
-
-
-        }
-
-        function toggleBody() {
-        	if (document.getElementByClassName("bodyRow").style.display==='none') {
-        		document.getElementByClassName("bodyRow").style.display ='block';
+        	function toggleBody() {
+        	
+        	if (bodyRow.style.display ==='none') {
+        		bodyRow.style.display ='block';
         	} else {
-        		document.getElementById("bodyRow").style.display ='none';
+        		bodyRow.style.display ='none';
         	}
         }
+
+
+
+
+        }
+
+        
 
         
 
@@ -105,7 +107,7 @@
         	newbodyContainer.colSpan = "3";
         	newbodyContainer.innerHTML = newestMessage.body;
         	newbodyRow.appendChild(newbodyContainer);
-
+        	newbodyRow.style.display = 'none';
         	
         	tableBody.appendChild(newemailRow);
         	tableBody.appendChild(newbodyRow);
@@ -120,7 +122,7 @@
       addMessage();
       
 
-      setInterval(addMessage,3500);
+      setInterval(addMessage,1000);
 
          
         	
