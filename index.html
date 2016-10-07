@@ -6,11 +6,13 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+
+
         
 
         for (var i = 0; i < window.geemails.length; i++) {
         	
-        	
+        	/* **checking other options to write data to web page**
 
         	var senderContainer = document.createElement('div');
         	senderContainer.innerHTML = window.geemails[i].sender;
@@ -27,12 +29,59 @@
         	dateContainer.innerHTML = window.geemails[i].date;
         	dateRow.appendChild(dateContainer);
 
-        console.log(setInterval(getNewMessage,4000));
+        console.log(setInterval(getNewMessage,4000)); */
         	
+        	
+        	/*creating rows with sender, subject, date data*/
+
+        	var emailRow = document.createElement('tr');
+        	emailRow.className = 'row';
+        	
+        	var senderContainer = document.createElement('td');
+        	senderContainer.innerHTML = window.geemails[i].sender;
+        
+       
+        	var subjectContainer = document.createElement('td');
+      		subjectContainer.innerHTML = window.geemails[i].subject;
+        	
+
+        	var dateContainer = document.createElement('td');
+        	dateContainer.innerHTML = window.geemails[i].date;
+        
+        	
+
+        	//appending table data to email row
+        	emailRow.appendChild(senderContainer);
+        	emailRow.appendChild(subjectContainer);
+        	emailRow.appendChild(dateContainer);
+
+        	//creating body row with body data appended to body row
+        	var bodyRow = document.createElement('tr');
+        	bodyRow.className = 'bodyRow';
+        	var bodyContainer = document.createElement('td')
+        	bodyContainer.colSpan = "3";
+        	bodyContainer.innerHTML = window.geemails[i].body;
+        	bodyRow.appendChild(bodyContainer);
+
+
+
+
+        	//appending email row and body row to ENTIRE TABLE BODY
+        	tableBody.appendChild(emailRow);
+        	tableBody.appendChild(bodyRow);
+
+
+
+
+
+
+
+
         }
 
 
 
+        
          
         	
 
@@ -45,9 +94,54 @@
       };
 
      
+      function addMessage() {
+
+      	var newestMessage = window.getNewMessage();
+
+      	var newemailRow = document.createElement('tr');
+        	newemailRow.className = 'row';
+        	
+        var newsenderContainer = document.createElement('td');
+        	newsenderContainer.innerHTML = newestMessage.sender;
+        
+       
+        var newsubjectContainer = document.createElement('td');
+      		newsubjectContainer.innerHTML = newestMessage.subject;
+        	
+
+        var newdateContainer = document.createElement('td');
+        	newdateContainer.innerHTML = newestMessage.date;
+        
+        	
+
+
+        	newemailRow.appendChild(newsenderContainer);
+        	newemailRow.appendChild(newsubjectContainer);
+        	newemailRow.appendChild(newdateContainer);
+
+        	var newbodyRow = document.createElement('tr');
+        	newbodyRow.className = 'bodyRow';
+        	var newbodyContainer = document.createElement('td')
+        	newbodyContainer.colSpan = "3";
+        	newbodyContainer.innerHTML = newestMessage.body;
+        	newbodyRow.appendChild(newbodyContainer);
+
+
+
+
+        	
+
+      }
+
+      addMessage();
+
+      console.log(addMessage());
+
+      setInterval(addMessage(),1000);
+
+
      
 	
-      
 	
 
     
@@ -70,7 +164,7 @@
 				<p><h3 class="fakeinfo">Spam</h3></p>
 			</div>
 			<div class="content">
-				<table style="width:100%" id="generatedData">
+				<table style="width:100%" id="tableBody">
 					<tr class="topheader">
 						<th>SENDER</th>
 						<tH>SUBJECT</tH>
@@ -80,15 +174,7 @@
 
 
 					
-					<tr onclick="openMessage()">
 					
-						<td id="senderRow"></td>
-						<td id="subjectRow"></td>
-						<td id="dateRow"></td>
-						
-						
-					
-					</tr>
 					
 					
 				</table>

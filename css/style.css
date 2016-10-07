@@ -1,5 +1,4 @@
 
-
 .rowbody {
 	color:white;
 	height:50px;
@@ -14,9 +13,10 @@
 	color:white;
 	height:50px;
 	background-color:#aaa;
-	margin-left:-2.5px;
-	margin-right:-2.5px;
 	
+	margin:auto;
+
+
 	}
 
 .dsize {
@@ -78,4 +78,8 @@
 .fakeinfo {
 	font-family:Arial-black;
 	font-size:14px;
+}
+
+.bodyrow {
+	display:none;
 }
