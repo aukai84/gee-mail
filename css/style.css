@@ -1,16 +1,42 @@
+
+
+.rowbody {
+	color:white;
+	height:50px;
+	background-color:#aaa;
+	margin-left:-2.5px;
+	margin-right:-2.5px;
+
+
+}
+
 .row {
 	color:white;
 	height:50px;
 	background-color:#aaa;
+	margin-left:-2.5px;
+	margin-right:-2.5px;
 	
+	}
 
-
+.dsize {
+	height:50px;
 }
 
 .row:hover {
 	color:#aaa;
 	background-color:white;
 	cursor:pointer;
+	margin-left:-2.5px;
+	margin-right:-2.5px;
+	
+	
+	
+}
+
+.senderRow {
+	margin-left:0px;
+	margin-right:0px;
 }
 
 .currentmsg {
@@ -31,6 +57,7 @@
 #generatedData {
 	border:.5px solid black;
 	width:100%;
+
 }
 
 .mainlogo {
@@ -45,4 +72,10 @@
 
 #inbox {
 	font-family:Arial-black;
+	font-size:14px;
+}
+
+.fakeinfo {
+	font-family:Arial-black;
+	font-size:14px;
 }

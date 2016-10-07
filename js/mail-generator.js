@@ -30,7 +30,7 @@
 
   function getNewMessage(){
     var now = new Date();
-    
+
     return generateMessage(now);
   }
 
