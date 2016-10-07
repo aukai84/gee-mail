@@ -12,27 +12,7 @@
 
         for (var i = 0; i < window.geemails.length; i++) {
         	
-        	/* **checking other options to write data to web page**
-
-        	var senderContainer = document.createElement('div');
-        	senderContainer.innerHTML = window.geemails[i].sender;
-        	senderContainer.className = 'row';
-        	senderRow.appendChild(senderContainer);
-
-        	var subjectContainer = document.createElement('div');
-      		subjectContainer.className = 'row';
-        	subjectContainer.innerHTML = window.geemails[i].subject;
-        	subjectRow.appendChild(subjectContainer);
-
-        	var dateContainer = document.createElement('div');
-        	dateContainer.className = 'row';
-        	dateContainer.innerHTML = window.geemails[i].date;
-        	dateRow.appendChild(dateContainer);
-
-        console.log(setInterval(getNewMessage,4000)); */
         	
-        	
-        	/*creating rows with sender, subject, date data*/
 
         	var emailRow = document.createElement('tr');
         	emailRow.className = 'row';
@@ -79,11 +59,22 @@
 
         }
 
+        function toggleBody() {
+        	if (document.getElementByClassName("bodyRow").style.display==='none') {
+        		document.getElementByClassName("bodyRow").style.display ='block';
+        	} else {
+        		document.getElementById("bodyRow").style.display ='none';
+        	}
+        }
 
+        
 
         function addMessage() {
 
-      	
+        //added counter to display total number of inbox emails
+      	i++;
+
+      	inboxCount.innerHTML = "Inbox(" + i + ")";
 
       	var newestMessage = getNewMessage;
 
@@ -129,7 +120,7 @@
       addMessage();
       
 
-      setInterval(addMessage,3000);
+      setInterval(addMessage,3500);
 
          
         	
@@ -163,7 +154,7 @@
 		<div class="container" id="main">
 			<div class='header'>
 				<img  class="mainlogo" src="https://www.pactsafe.com/hubfs/gmail-image.jpg" />
-				<h3 id="inbox"><script type="text/javascript">document.write("Inbox(" + window.geemails.length + ")");</script></h3>
+				<h3 id="inboxCount"></h3>
 				<p><h3 class="fakeinfo">Sent</h3></p>
 				<p><h3 class="fakeinfo">Drafts</h3></p>
 				<p><h3 class="fakeinfo">Spam</h3></p>
@@ -184,13 +175,7 @@
 					
 				</table>
 
-				<div class="currentMsg" >
-					<p id="messageBody"><h5>Current Message:</h5></p>
-					<p id="currentmsg"></p>
-
-	
-					
-				</div>
+				
 				
 			</div>
 		</div>
